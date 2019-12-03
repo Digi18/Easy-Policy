@@ -18,7 +18,7 @@ router.get('/getDetails',(req,res) => {
 
                     collection.find({}).toArray((err,result) => {
 
-                        let output = result.map(r => ({'fullname':r.fullname
+                        let output = result.map(r => ({'fullname':r.name
                         ,'mobile':r.mobile,'date':r.date}));
 
                         res.send(output);
