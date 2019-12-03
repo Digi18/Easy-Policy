@@ -14,15 +14,22 @@ router.get('/getDetails',(req,res) => {
                  }
                  else{
 
-                    let collection = client.db('Tiffino_db').collection('Messages');
+                    let collection = client.db('Easypolicy_db').collection('Policies');
 
                     collection.find({},{id:0,_id:0}).toArray((err,result) => {
 
-                        let output = result.map(r => ({'fullname':r.name
+                        if(err){
+                            console.log('Error',err);
+                        }
+                        else{
+
+                            let output = result.map(r => ({'fullname':r.name
                         ,'mobile':r.mobile,'date':r.date}));
 
                         res.send(output);
                         client.close();  
+                        }
+                        
                     });
                  }
     });
