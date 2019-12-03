@@ -9,7 +9,7 @@ router.post('/saveDetails',(req,res) => {
 
       var data = {
 
-         id:req.body.id,
+        // id:req.body.id,
          name:req.body.fullname,
          mobile:req.body.mobile,
          date:req.body.date
