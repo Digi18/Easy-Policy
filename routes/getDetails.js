@@ -16,7 +16,7 @@ router.get('/getDetails',(req,res) => {
 
                     let collection = client.db('Tiffino_db').collection('Messages');
 
-                    collection.find({}).toArray((err,result) => {
+                    collection.find({},{id:0,_id:0}).toArray((err,result) => {
 
                         let output = result.map(r => ({'fullname':r.name
                         ,'mobile':r.mobile,'date':r.date}));
